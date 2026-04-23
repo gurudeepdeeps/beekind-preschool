@@ -68,6 +68,30 @@ You only need a modern web browser and a local web server to run the project.
 3.  **View the site**:
     Open your browser and navigate to `http://localhost:3000` (or the port provided by your server).
 
+## 🌐 Deployment
+
+### Deploying to Vercel
+
+The easiest way to deploy this site is using [Vercel](https://vercel.com/):
+
+#### Option 1: Using the Vercel Dashboard (Recommended)
+1.  Push your code to a GitHub repository (already done!).
+2.  Log in to the [Vercel Dashboard](https://vercel.com/dashboard).
+3.  Click **"Add New..."** -> **"Project"**.
+4.  Import your `beekind-preschool` repository.
+5.  Vercel will automatically detect it as a static project. Click **"Deploy"**.
+
+#### Option 2: Using the Vercel CLI
+1.  Install the Vercel CLI:
+    ```bash
+    npm i -g vercel
+    ```
+2.  Run the deployment command in the project root:
+    ```bash
+    vercel
+    ```
+3.  Follow the prompts to link your account and deploy.
+
 ## 📄 License
 
 © 2026 BeeKind Preschool. All rights reserved.
