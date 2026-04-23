@@ -1,0 +1,224 @@
+
+/* Premium Gallery Styles */
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    background: var(--white);
+    border: 2px solid var(--primary-light);
+    border-radius: 50px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.main-gal-page {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.mg-img {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+}
+
+.mg-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.main-gal-page:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.main-gal-page:hover .mg-img img {
+    transform: scale(1.1);
+}
+
+.main-gal-page h4 {
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0;
+    text-align: center;
+    background: var(--white);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.album-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 41, 38, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+    backdrop-filter: blur(2px);
+}
+
+.main-gal-page:hover .album-overlay {
+    opacity: 1;
+}
+
+.view-btn {
+    background: var(--primary-color);
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.5);
+    transition: var(--transition);
+}
+
+.main-gal-page:hover .view-btn {
+    transform: scale(1);
+}
+
+/* Lightbox Modal */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 9999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.modal-img.active {
+    transform: scale(1);
+}
+
+.modal-nav {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    pointer-events: none;
+}
+
+.nav-btn {
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    pointer-events: auto;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.modal-info {
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.modal-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.image-counter {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.thumbnail-strip {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    overflow-x: auto;
+    max-width: 800px;
+    padding: 10px;
+}
+
+.thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.thumb.active {
+    opacity: 1;
+    border-color: var(--primary-color);
+}
