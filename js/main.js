@@ -22,18 +22,28 @@
         $('.offcanvas__overlay').toggleClass('active');
     });
 
+    // Mobile Sub-menu Toggle
+    $('.main-menu li.has-children > a').on('click', function(e) {
+        if ($(window).width() < 992) {
+            e.preventDefault();
+            $(this).parent().toggleClass('submenu-open');
+        }
+    });
+
     $('.offcanvas__overlay, .btn-close').on('click', function() {
         $('.navbar-toggler').removeClass('active');
         $('.theme-nav-menu').removeClass('active');
         $('.offcanvas__overlay').removeClass('active');
     });
 
-    // Initialize AOS
-    AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 100
-    });
+    // Initialize AOS when the library is present on the page.
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    }
 
     // Counter Up
     if ($('.counter').length) {
