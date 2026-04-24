@@ -43,7 +43,8 @@ $(function () {
             autoplaySpeed: 3000,
             pauseOnHover: false,
             pauseOnFocus: false,
-            arrows: false
+            arrows: false,
+            adaptiveHeight: true
         });
     }
 

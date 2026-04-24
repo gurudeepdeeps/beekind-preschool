@@ -8,6 +8,23 @@
         padding-right: 20px;
     }
 
+    /* --- Hero Slider Full Image Fix --- */
+    .bizzen-hero, 
+    .hero-slider, 
+    .single-hero-item,
+    .hero-slider .slick-list,
+    .hero-slider .slick-track {
+        height: auto !important;
+        min-height: auto !important;
+    }
+
+    .banner_image {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        object-fit: contain !important;
+    }
+
     /* --- Header & Navigation --- */
     .header-top-bar {
         display: flex;
@@ -59,19 +76,20 @@
 
     /* Quick Enquiry Button Fix */
     .f-btn {
-        bottom: 0 !important;
+        bottom: 20px !important;
         top: auto !important;
         right: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
+        left: auto !important;
+        width: auto !important;
+        min-width: 150px !important;
         transform: none !important;
-        border-radius: 0 !important;
-        padding: 10px 0 !important;
-        height: 60px !important;
+        border-radius: 30px 0 0 30px !important;
+        padding: 0 25px !important;
+        height: 50px !important;
         display: flex !important;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+        box-shadow: -2px 0 10px rgba(0,0,0,0.2);
         background-color: var(--secondary-color) !important;
         color: var(--white) !important;
         z-index: 9999 !important;
@@ -85,11 +103,46 @@
 
     /* Floating Buttons repositioning to avoid bottom bar overlap */
     .fcall {
-        bottom: 140px !important;
+        bottom: 220px !important; /* Moved higher */
+        z-index: 10001 !important; /* Ensure it stays above everything */
     }
 
     .fwhatsapp {
-        bottom: 80px !important;
+        bottom: 155px !important; /* Moved higher */
+        z-index: 10001 !important;
+    }
+
+    /* Scroll to top alignment and positioning */
+    .scroll-up {
+        right: 20px !important; /* Moved to right side */
+        left: auto !important;
+        bottom: 90px !important; /* Above the bottom bar with margin */
+        width: 45px !important;
+        height: 45px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 10001 !important;
+        background: #fff !important;
+        border-radius: 50% !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
+    }
+
+    .scroll-up::after {
+        width: 100% !important;
+        height: 100% !important;
+        line-height: 45px !important;
+        left: 0 !important;
+        top: 0 !important;
+        position: absolute !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .scroll-up svg {
+        width: 100% !important;
+        height: 100% !important;
     }
 
     /* Adjust footer margin for bottom bar */
@@ -97,32 +150,65 @@
         margin-bottom: 50px;
     }
 
+    /* --- Why Us Section --- */
+    .why-us-modern-section {
+        padding-bottom: 20px !important;
+    }
+
+    .why-us-image-part {
+        display: none;
+    }
+
+    /* --- Facilities Section --- */
+    .bizzen-project_three {
+        padding-top: 40px !important;
+    }
+
     /* --- About Us Section --- */
-.why-us-image-part {
-        display: none;
+    .bizzen-we_two .image-column {
+        margin-bottom: 10px !important; /* Small gap for breathing room */
     }
 
-    .bizzen-we_two .bizzen-content-box {
-        margin-top: 0;
+    .bizzen-we_two .image-1 {
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
     }
 
-    .bizzen-we_two .bizzen-image-box::before {
-        display: none;
+    .bizzen-we_two .image-1:before {
+        display: none; /* Remove decorative object */
     }
 
     .bizzen-we_two .bizzen-image-box {
         position: relative;
+        margin-right: 0 !important;
+    }
+
+    .bizzen-we_two .bizzen-image-box::before {
+        display: none; /* Remove large decorative circle */
+    }
+
+    .bizzen-we_two .bizzen-content-box {
+        margin-top: 0 !important;
     }
 
     .bizzen-we_two .info-box {
         position: absolute;
-        top: 12px;
-        right: 12px;
+        top: 15px;
+        right: 15px;
         bottom: auto;
         margin: 0;
-        width: 150px;
-        max-width: 150px;
+        width: 140px;
+        max-width: 140px;
         z-index: 6;
+        padding: 15px 10px !important;
+    }
+
+    .bizzen-we_two .info-box .count {
+        font-size: 32px !important;
+    }
+
+    .bizzen-we_two .info-box h4 {
+        font-size: 16px !important;
     }
 
     /* --- Facilities --- */
@@ -349,9 +435,7 @@
     .map-box iframe {
         height: 240px !important;
     }
-}
 
-@media (max-width: 575px) {
     .chairman-image-wrapper {
         width: 200px;
         height: 240px;
