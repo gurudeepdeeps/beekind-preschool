@@ -51,7 +51,7 @@ $(function () {
     // Custom Preloader Fallback
     const preloader = document.querySelector('.preloader img');
     if (preloader) {
-    preloader.src = 'assets/images/logo-only.png';
+    preloader.src = 'assets/images/beekind-logo-only.webp';
         preloader.style.maxWidth = '150px';
     }
 });
